@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fl = new System.Windows.Forms.FlowLayoutPanel();
             this.an1 = new System.Windows.Forms.TextBox();
             this.fl1 = new System.Windows.Forms.FlowLayoutPanel();
             this.an2 = new System.Windows.Forms.TextBox();
@@ -37,17 +36,9 @@
             this.an5 = new System.Windows.Forms.TextBox();
             this.tt = new System.Windows.Forms.Button();
             this.lb = new System.Windows.Forms.Label();
+            this.fl = new System.Windows.Forms.FlowLayoutPanel();
             this.fl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // fl
-            // 
-            this.fl.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
-            this.fl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.fl.Location = new System.Drawing.Point(135, 145);
-            this.fl.Name = "fl";
-            this.fl.Size = new System.Drawing.Size(72, 145);
-            this.fl.TabIndex = 0;
             // 
             // an1
             // 
@@ -67,9 +58,9 @@
             this.fl1.Controls.Add(this.an4);
             this.fl1.Controls.Add(this.an5);
             this.fl1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.fl1.Location = new System.Drawing.Point(238, 116);
+            this.fl1.Location = new System.Drawing.Point(265, 94);
             this.fl1.Name = "fl1";
-            this.fl1.Size = new System.Drawing.Size(280, 179);
+            this.fl1.Size = new System.Drawing.Size(280, 147);
             this.fl1.TabIndex = 5;
             // 
             // an2
@@ -104,7 +95,7 @@
             // 
             this.tt.AutoSize = true;
             this.tt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tt.Location = new System.Drawing.Point(564, 181);
+            this.tt.Location = new System.Drawing.Point(573, 140);
             this.tt.Name = "tt";
             this.tt.Size = new System.Drawing.Size(97, 55);
             this.tt.TabIndex = 6;
@@ -116,22 +107,34 @@
             // 
             this.lb.AutoSize = true;
             this.lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb.Location = new System.Drawing.Point(143, 116);
+            this.lb.Location = new System.Drawing.Point(198, 94);
             this.lb.Name = "lb";
             this.lb.Size = new System.Drawing.Size(44, 13);
             this.lb.TabIndex = 7;
             this.lb.Text = "Câu 1:";
             // 
+            // fl
+            // 
+            this.fl.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.fl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.fl.Location = new System.Drawing.Point(201, 110);
+            this.fl.Name = "fl";
+            this.fl.Size = new System.Drawing.Size(34, 131);
+            this.fl.TabIndex = 0;
+            // 
             // questions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(760, 400);
             this.Controls.Add(this.lb);
             this.Controls.Add(this.tt);
             this.Controls.Add(this.fl1);
             this.Controls.Add(this.fl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "questions";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "questions";
             this.Load += new System.EventHandler(this.questions_Load);
             this.fl1.ResumeLayout(false);
@@ -142,8 +145,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel fl;
         private System.Windows.Forms.TextBox an1;
         private System.Windows.Forms.FlowLayoutPanel fl1;
         private System.Windows.Forms.TextBox an2;
@@ -152,5 +153,6 @@
         private System.Windows.Forms.Button tt;
         private System.Windows.Forms.TextBox an5;
         private System.Windows.Forms.Label lb;
+        private System.Windows.Forms.FlowLayoutPanel fl;
     }
 }

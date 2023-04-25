@@ -48,7 +48,7 @@
             // 
             this.testcode.AutoSize = true;
             this.testcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testcode.Location = new System.Drawing.Point(76, 56);
+            this.testcode.Location = new System.Drawing.Point(234, 80);
             this.testcode.Name = "testcode";
             this.testcode.Size = new System.Drawing.Size(86, 18);
             this.testcode.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             this.testname.AutoSize = true;
             this.testname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testname.Location = new System.Drawing.Point(33, 139);
+            this.testname.Location = new System.Drawing.Point(191, 163);
             this.testname.Name = "testname";
             this.testname.Size = new System.Drawing.Size(129, 18);
             this.testname.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             this.password.AutoSize = true;
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password.Location = new System.Drawing.Point(76, 225);
+            this.password.Location = new System.Drawing.Point(234, 249);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(77, 18);
             this.password.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             this.duration.AutoSize = true;
             this.duration.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.duration.Location = new System.Drawing.Point(12, 310);
+            this.duration.Location = new System.Drawing.Point(170, 334);
             this.duration.Name = "duration";
             this.duration.Size = new System.Drawing.Size(168, 18);
             this.duration.TabIndex = 3;
@@ -88,7 +88,7 @@
             // 
             this.classid.AutoSize = true;
             this.classid.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classid.Location = new System.Drawing.Point(399, 56);
+            this.classid.Location = new System.Drawing.Point(506, 80);
             this.classid.Name = "classid";
             this.classid.Size = new System.Drawing.Size(72, 18);
             this.classid.TabIndex = 4;
@@ -98,7 +98,7 @@
             // 
             this.amountofquestions.AutoSize = true;
             this.amountofquestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amountofquestions.Location = new System.Drawing.Point(399, 139);
+            this.amountofquestions.Location = new System.Drawing.Point(506, 163);
             this.amountofquestions.Name = "amountofquestions";
             this.amountofquestions.Size = new System.Drawing.Size(135, 18);
             this.amountofquestions.TabIndex = 5;
@@ -106,42 +106,42 @@
             // 
             // tb1
             // 
-            this.tb1.Location = new System.Drawing.Point(168, 57);
+            this.tb1.Location = new System.Drawing.Point(326, 81);
             this.tb1.Name = "tb1";
             this.tb1.Size = new System.Drawing.Size(126, 20);
             this.tb1.TabIndex = 6;
             // 
             // tb2
             // 
-            this.tb2.Location = new System.Drawing.Point(168, 139);
+            this.tb2.Location = new System.Drawing.Point(326, 163);
             this.tb2.Name = "tb2";
             this.tb2.Size = new System.Drawing.Size(126, 20);
             this.tb2.TabIndex = 7;
             // 
             // tb3
             // 
-            this.tb3.Location = new System.Drawing.Point(168, 226);
+            this.tb3.Location = new System.Drawing.Point(326, 250);
             this.tb3.Name = "tb3";
             this.tb3.Size = new System.Drawing.Size(126, 20);
             this.tb3.TabIndex = 8;
             // 
             // tb4
             // 
-            this.tb4.Location = new System.Drawing.Point(186, 310);
+            this.tb4.Location = new System.Drawing.Point(344, 334);
             this.tb4.Name = "tb4";
             this.tb4.Size = new System.Drawing.Size(126, 20);
             this.tb4.TabIndex = 9;
             // 
             // tb5
             // 
-            this.tb5.Location = new System.Drawing.Point(477, 57);
+            this.tb5.Location = new System.Drawing.Point(584, 81);
             this.tb5.Name = "tb5";
             this.tb5.Size = new System.Drawing.Size(126, 20);
             this.tb5.TabIndex = 10;
             // 
             // tb6
             // 
-            this.tb6.Location = new System.Drawing.Point(540, 139);
+            this.tb6.Location = new System.Drawing.Point(647, 163);
             this.tb6.Name = "tb6";
             this.tb6.Size = new System.Drawing.Size(126, 20);
             this.tb6.TabIndex = 11;
@@ -149,7 +149,7 @@
             // 
             // C
             // 
-            this.C.Location = new System.Drawing.Point(515, 225);
+            this.C.Location = new System.Drawing.Point(622, 249);
             this.C.Name = "C";
             this.C.Size = new System.Drawing.Size(88, 57);
             this.C.TabIndex = 12;
@@ -159,7 +159,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(515, 310);
+            this.button1.Location = new System.Drawing.Point(622, 334);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 57);
             this.button1.TabIndex = 13;
@@ -171,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(828, 455);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.C);
             this.Controls.Add(this.tb6);
@@ -186,7 +186,9 @@
             this.Controls.Add(this.password);
             this.Controls.Add(this.testname);
             this.Controls.Add(this.testcode);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CreateTest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateTest";
             this.Load += new System.EventHandler(this.CreateTest_Load);
             this.ResumeLayout(false);

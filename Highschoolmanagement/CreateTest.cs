@@ -51,10 +51,12 @@ namespace Highschoolmanagement
                 {
                     cmd.ExecuteNonQuery();
                     questions question = new questions(Convert.ToInt32(tb6.Text), tb1.Text);
-                    question.ShowDialog();
+                    question.Name = "Question";
+                    question.MdiParent = this.ParentForm;
+                    question.Show();
                 } catch (Exception ex) 
                 {
-                    MessageBox.Show("Lỗi kết nối hoặc Test code đã tồn tại!");
+                    MessageBox.Show("Lỗi kết nối hoặc Test code đã tồn tại hoặc Class ID không tồn tại!","Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             
@@ -69,9 +71,8 @@ namespace Highschoolmanagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Test form = new Test();
-            form.Show();
+            this.Close();
+
         }
     }
 }

@@ -64,3 +64,5 @@ C:\Users\Admin\Desktop\Highschoolmanagement\Highschoolmanagement\Highschoolmanag
 C:\Users\Admin\Desktop\Highschoolmanagement\Highschoolmanagement\Highschoolmanagement\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Admin\Desktop\Highschoolmanagement\Highschoolmanagement\Highschoolmanagement\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Admin\Desktop\Highschoolmanagement\Highschoolmanagement\Highschoolmanagement\obj\Debug\Highschoolmanagement.Modifytest.resources
+C:\Users\Admin\Desktop\Highschoolmanagement\Highschoolmanagement\Highschoolmanagement\obj\Debug\Highschoolmanagement.ModifyAttendance.resources
+C:\Users\Admin\Desktop\Highschoolmanagement\Highschoolmanagement\Highschoolmanagement\obj\Debug\Highschoolmanagement.PreviewTest.resources

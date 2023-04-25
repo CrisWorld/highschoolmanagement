@@ -35,9 +35,21 @@ namespace Highschoolmanagement
         private void questions_Load(object sender, EventArgs e)
         {
             lb.Text = "Câu hỏi 1";
+            rb1.AutoSize = false;
+            rb1.Height = 19;
+            rb1.Width = 85;
             fl.Controls.Add(rb1);
+            rb2.AutoSize = false;
+            rb2.Height = 19;
+            rb2.Width = 85;
             fl.Controls.Add(rb2);
+            rb3.AutoSize = false;
+            rb3.Height = 19;
+            rb3.Width = 85;
             fl.Controls.Add(rb3);
+            rb4.AutoSize = false;
+            rb4.Height = 19;
+            rb4.Width = 85;
             fl.Controls.Add(rb4);
         }
         int count = 1;
@@ -57,7 +69,10 @@ namespace Highschoolmanagement
                    "where testcode = '" + testcode + "' and questioncontent='" + an1.Text + "'),false,'" + an2.Text + "');";
             }
             cmd.CommandText = query;
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            } catch { }
             if (rb2.Checked)
             {
                 query = "insert into answer(questionID,correct,answercontent) values ((select questionID from question " +
@@ -115,9 +130,7 @@ namespace Highschoolmanagement
             else
             {
                 MessageBox.Show("Đã đủ câu hỏi!");
-                this.Hide();
-                Test form = new Test();
-                form.Show();
+                this.Close();
             }
         }
     }

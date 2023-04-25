@@ -17,7 +17,7 @@ namespace Highschoolmanagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Signinn());  
+            Application.Run(new Teacher());  
         }
     }
 }

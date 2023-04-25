@@ -33,15 +33,16 @@ namespace Highschoolmanagement
 
         private void button1_Click(object sender, EventArgs e)
         {
+            clb.Items.Clear();
             DataTable data = new DataTable();
             string select_query = "select * from class where classID='" + textBox1.Text + "';";
             con.ConnectionString = constr;
             con.Open();
-            cmd = new MySqlCommand(select_query,con);
+            cmd = new MySqlCommand(select_query, con);
             MySqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read()) 
+            if (reader.Read())
             {
-                MessageBox.Show("Đã tìm thấy!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Đã tìm thấy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 select_query = "select fullname,studentID from student as st,class as cl where st.classID=cl.classID;";
                 if (reader.HasRows == false) { MessageBox.Show("Lớp chưa có học sinh!"); reader.Close(); }
                 else
@@ -54,37 +55,48 @@ namespace Highschoolmanagement
                         var fullname = reader2.GetString(0);
                         var studentID = reader2.GetString(1);
                         list.Add(studentID);
-                        clb.Items.Add(fullname + " [" + studentID + "]");
+                        clb.Items.Add(fullname);
                     }
-                } 
-                
+                }
+
                 //cmd = new MySqlCommand(select_query,con);
-            } else MessageBox.Show("Không tìm thấy lớp!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            else MessageBox.Show("Không tìm thấy lớp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             con.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string select_query = "insert into attendancelist(days,classID) values ('"+lb3.Text+"','"+textBox1.Text+"');";
+            string select_query = "select attendancelistID from attendancelist where days = '" + lb3.Text + "' and classID = '" + textBox1.Text + "';";
             con.ConnectionString = constr;
             con.Open();
             cmd = new MySqlCommand(select_query, con);
-            cmd.ExecuteNonQuery();
-            int count = 0;
-            foreach (var item in clb.Items)
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read()) { reader.Close(); MessageBox.Show("Bạn đã điểm danh hôm nay rồi !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            else
             {
-                select_query = "insert into attendance(attendancelistID,studentID,checked) values ((select attendancelistID from attendancelist where classID='" + textBox1.Text + "' and days='" + lb3.Text + "'),'" + list[count] + "','false');";
-                count++;
+                select_query = "insert into attendancelist(days,classID) values ('" + lb3.Text + "','" + textBox1.Text + "');";
+                reader.Close();
                 cmd = new MySqlCommand(select_query, con);
                 cmd.ExecuteNonQuery();
-            }
-            count = 0;
-            foreach (var item in clb.CheckedItems)
-            {
-                select_query = "update attendance set checked=true where studentID='" + list[count] +"';";
-                count++;
-                cmd = new MySqlCommand(select_query, con);
-                cmd.ExecuteNonQuery();
+                int count = 0;
+                foreach (var item in clb.Items)
+                {
+
+                    select_query = "insert into attendance(attendancelistID,studentID,checked) values ((select attendancelistID from attendancelist where classID='" + textBox1.Text + "' and days='" + lb3.Text + "'),'" + list[count] + "','0');";
+                    count++;
+                    cmd = new MySqlCommand(select_query, con);
+                    cmd.ExecuteNonQuery();
+                }
+                count = 0;
+                foreach (var item in clb.CheckedItems)
+                {
+                    select_query = "update attendance set checked='1' where studentID='" + list[count] + "';";
+                    count++;
+                    cmd = new MySqlCommand(select_query, con);
+                    cmd.ExecuteNonQuery();
+                }
+                con.Close();
             }
         }
     }

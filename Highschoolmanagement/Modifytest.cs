@@ -29,6 +29,7 @@ namespace Highschoolmanagement
         
         private void Modifytest_Load(object sender, EventArgs e)
         {
+            button2.Enabled = false;
             con = new MySqlConnection(constr);
             con.Open();
         }
@@ -49,16 +50,28 @@ namespace Highschoolmanagement
                     adapter.Fill(dt1);
                 }
                 dgv2.DataSource = dt1;
-                questionID.Text = dgv2.Rows[0].Cells[0].Value.ToString();
-                questioncontent.Text = dgv2.Rows[0].Cells[1].Value.ToString();
-                query = "select answerID,answercontent from answer as a where a.questionID='" + dgv2.Rows[0].Cells[0].Value.ToString() + "';";
-                adapter = new MySqlDataAdapter(query, con);
-                if (adapter != null)
+                try
                 {
-                    adapter.Fill(dt2);
+                    questionID.Text = dgv2.Rows[0].Cells[0].Value.ToString();
+                    questioncontent.Text = dgv2.Rows[0].Cells[1].Value.ToString();
+                    query = "select answerID,answercontent from answer as a where a.questionID='" + dgv2.Rows[0].Cells[0].Value.ToString() + "';";
+                    adapter = new MySqlDataAdapter(query, con);
+                    if (adapter != null)
+                    {
+                        adapter.Fill(dt2);
+                    }
+                    dgv3.DataSource = dt2;
+                    answercontent.Text = dgv3.Rows[0].Cells[1].Value.ToString();
+                    button2.Enabled = true;
+                    button1.Enabled = false;
                 }
-                dgv3.DataSource = dt2;
-                answercontent.Text = dgv3.Rows[0].Cells[1].Value.ToString();
+                catch 
+                {
+                    query = "delete from test where testcode = '" + testcode.Text + "';";
+                    cmd.CommandText= query;
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Bài kiểm tra chưa có câu hỏi! vui lòng tạo lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             } 
                 
         }
@@ -89,40 +102,42 @@ namespace Highschoolmanagement
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int i;
-            i = dgv3.CurrentRow.Index;
-            query = "update question set questioncontent = '" + questioncontent.Text + "' " +
-                "where questionID = '" + questionID.Text + "';";
-            cmd = new MySqlCommand(query,con);
-            cmd.ExecuteNonQuery();
-            query = "update answer as a set answercontent='" + answercontent.Text + "' " +
-                "where answerID='" + dgv3.Rows[i].Cells[0].Value.ToString() +"';";
-            cmd = new MySqlCommand(query, con);
-            cmd.ExecuteNonQuery();
+                int i;
+                i = dgv3.CurrentRow.Index;
+                query = "update question set questioncontent = '" + questioncontent.Text + "' " +
+                    "where questionID = '" + questionID.Text + "';";
+                cmd = new MySqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                query = "update answer as a set answercontent='" + answercontent.Text + "' " +
+                    "where answerID='" + dgv3.Rows[i].Cells[0].Value.ToString() + "';";
+                cmd = new MySqlCommand(query, con);
+                cmd.ExecuteNonQuery();
 
-            dt2 = new DataTable();
-            dt1 = new DataTable();
-            query = "select questionID,questioncontent from question as q where q.testcode='" + testcode.Text + "';";
-            adapter = new MySqlDataAdapter(query, con);
-            if (adapter != null)
-            {
-                adapter.Fill(dt1);
-            }
-            dgv2.DataSource = dt1;
-            i = dgv2.CurrentRow.Index;
-            query = "select answerID,answercontent from answer as a where a.questionID='" + dgv2.Rows[i].Cells[0].Value.ToString() + "';";
-            adapter = new MySqlDataAdapter(query, con);
-            if (adapter != null)
-            {
-                adapter.Fill(dt2);
-            }
-            dgv3.DataSource= dt2;
-            questionID.Text = dgv2.Rows[0].Cells[0].Value.ToString();
-            answercontent.Text = dgv3.Rows[0].Cells[1].Value.ToString();
-            questioncontent.Text = dgv2.Rows[0].Cells[1].Value.ToString();
+                dt2 = new DataTable();
+                dt1 = new DataTable();
+                query = "select questionID,questioncontent from question as q where q.testcode='" + testcode.Text + "';";
+                adapter = new MySqlDataAdapter(query, con);
+                if (adapter != null)
+                {
+                    adapter.Fill(dt1);
+                }
+                dgv2.DataSource = dt1;
+                i = dgv2.CurrentRow.Index;
+                query = "select answerID,answercontent from answer as a where a.questionID='" + dgv2.Rows[i].Cells[0].Value.ToString() + "';";
+                adapter = new MySqlDataAdapter(query, con);
+                if (adapter != null)
+                {
+                    adapter.Fill(dt2);
+                }
+                dgv3.DataSource = dt2;
+                questionID.Text = dgv2.Rows[0].Cells[0].Value.ToString();
+                answercontent.Text = dgv3.Rows[0].Cells[1].Value.ToString();
+                questioncontent.Text = dgv2.Rows[0].Cells[1].Value.ToString();
+        }
 
-
-
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
     }

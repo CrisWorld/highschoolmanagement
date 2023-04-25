@@ -104,6 +104,12 @@
     <Compile Include="Modifytest.Designer.cs">
       <DependentUpon>Modifytest.cs</DependentUpon>
     </Compile>
+    <Compile Include="PreviewTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreviewTest.Designer.cs">
+      <DependentUpon>PreviewTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="questions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,12 @@
     <Compile Include="Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifyAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyAttendance.Designer.cs">
+      <DependentUpon>ModifyAttendance.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Attendance.resx">
       <DependentUpon>Attendance.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modifytest.resx">
       <DependentUpon>Modifytest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreviewTest.resx">
+      <DependentUpon>PreviewTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="questions.resx">
       <DependentUpon>questions.cs</DependentUpon>
@@ -159,6 +174,9 @@
     </Compile>
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyAttendance.resx">
+      <DependentUpon>ModifyAttendance.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

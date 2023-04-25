@@ -37,13 +37,14 @@
             this.questioncontent = new System.Windows.Forms.TextBox();
             this.answercontent = new System.Windows.Forms.TextBox();
             this.dgv3 = new System.Windows.Forms.DataGridView();
+            this.answerrr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.answers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.dgv2 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
-            this.answerrr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.answers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +53,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 28);
+            this.label1.Location = new System.Drawing.Point(189, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 15);
             this.label1.TabIndex = 0;
@@ -62,7 +63,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(59, 92);
+            this.label2.Location = new System.Drawing.Point(215, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 15);
             this.label2.TabIndex = 1;
@@ -72,7 +73,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(33, 208);
+            this.label3.Location = new System.Drawing.Point(189, 203);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 17);
             this.label3.TabIndex = 2;
@@ -82,7 +83,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(43, 153);
+            this.label4.Location = new System.Drawing.Point(199, 148);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 17);
             this.label4.TabIndex = 3;
@@ -90,14 +91,14 @@
             // 
             // testcode
             // 
-            this.testcode.Location = new System.Drawing.Point(18, 46);
+            this.testcode.Location = new System.Drawing.Point(174, 41);
             this.testcode.Name = "testcode";
             this.testcode.Size = new System.Drawing.Size(100, 20);
             this.testcode.TabIndex = 5;
             // 
             // questionID
             // 
-            this.questionID.Location = new System.Drawing.Point(50, 110);
+            this.questionID.Location = new System.Drawing.Point(206, 105);
             this.questionID.Name = "questionID";
             this.questionID.ReadOnly = true;
             this.questionID.Size = new System.Drawing.Size(100, 20);
@@ -105,7 +106,7 @@
             // 
             // questioncontent
             // 
-            this.questioncontent.Location = new System.Drawing.Point(12, 173);
+            this.questioncontent.Location = new System.Drawing.Point(168, 168);
             this.questioncontent.Name = "questioncontent";
             this.questioncontent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.questioncontent.Size = new System.Drawing.Size(195, 20);
@@ -113,7 +114,7 @@
             // 
             // answercontent
             // 
-            this.answercontent.Location = new System.Drawing.Point(12, 228);
+            this.answercontent.Location = new System.Drawing.Point(168, 223);
             this.answercontent.Name = "answercontent";
             this.answercontent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.answercontent.Size = new System.Drawing.Size(195, 20);
@@ -121,20 +122,35 @@
             // 
             // dgv3
             // 
+            this.dgv3.AllowUserToAddRows = false;
+            this.dgv3.AllowUserToDeleteRows = false;
             this.dgv3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.answerrr,
             this.answers});
-            this.dgv3.Location = new System.Drawing.Point(535, 46);
+            this.dgv3.Location = new System.Drawing.Point(600, 41);
             this.dgv3.Name = "dgv3";
-            this.dgv3.Size = new System.Drawing.Size(253, 361);
+            this.dgv3.Size = new System.Drawing.Size(191, 361);
             this.dgv3.TabIndex = 12;
             this.dgv3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv3_CellContentClick);
+            // 
+            // answerrr
+            // 
+            this.answerrr.DataPropertyName = "answerID";
+            this.answerrr.HeaderText = "Answer ID";
+            this.answerrr.Name = "answerrr";
+            // 
+            // answers
+            // 
+            this.answers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.answers.DataPropertyName = "answercontent";
+            this.answers.HeaderText = "Nội dung câu trả lời";
+            this.answers.Name = "answers";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(124, 41);
+            this.button1.Location = new System.Drawing.Point(280, 36);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 29);
             this.button1.TabIndex = 13;
@@ -144,15 +160,17 @@
             // 
             // dgv2
             // 
+            this.dgv2.AllowUserToAddRows = false;
+            this.dgv2.AllowUserToDeleteRows = false;
             this.dgv2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Column1});
-            this.dgv2.Location = new System.Drawing.Point(241, 46);
+            this.dgv2.Location = new System.Drawing.Point(397, 41);
             this.dgv2.Name = "dgv2";
-            this.dgv2.Size = new System.Drawing.Size(268, 361);
+            this.dgv2.Size = new System.Drawing.Size(186, 361);
             this.dgv2.TabIndex = 11;
             this.dgv2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellContentClick);
             // 
@@ -173,7 +191,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(62, 276);
+            this.button2.Location = new System.Drawing.Point(218, 271);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(83, 29);
             this.button2.TabIndex = 14;
@@ -181,24 +199,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // answerrr
+            // button3
             // 
-            this.answerrr.DataPropertyName = "answerID";
-            this.answerrr.HeaderText = "Answer ID";
-            this.answerrr.Name = "answerrr";
-            // 
-            // answers
-            // 
-            this.answers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.answers.DataPropertyName = "answercontent";
-            this.answers.HeaderText = "Nội dung câu trả lời";
-            this.answers.Name = "answers";
+            this.button3.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(218, 334);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(83, 29);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Quay lại";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Modifytest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 456);
+            this.ClientSize = new System.Drawing.Size(828, 455);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgv3);
@@ -211,7 +228,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Modifytest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modifytest";
             this.Load += new System.EventHandler(this.Modifytest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv3)).EndInit();
@@ -239,5 +258,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn answerrr;
         private System.Windows.Forms.DataGridViewTextBoxColumn answers;
+        private System.Windows.Forms.Button button3;
     }
 }
