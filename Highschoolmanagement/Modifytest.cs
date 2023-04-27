@@ -120,7 +120,7 @@ namespace Highschoolmanagement
                 if (adapter != null)
                 {
                     adapter.Fill(dt1);
-                }
+                } 
                 dgv2.DataSource = dt1;
                 i = dgv2.CurrentRow.Index;
                 query = "select answerID,answercontent from answer as a where a.questionID='" + dgv2.Rows[i].Cells[0].Value.ToString() + "';";

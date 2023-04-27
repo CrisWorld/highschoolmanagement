@@ -96,6 +96,7 @@ namespace Highschoolmanagement
                     cmd = new MySqlCommand(select_query, con);
                     cmd.ExecuteNonQuery();
                 }
+                MessageBox.Show("Đã lưu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 con.Close();
             }
         }

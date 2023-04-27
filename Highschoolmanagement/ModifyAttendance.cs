@@ -85,14 +85,6 @@ namespace Highschoolmanagement
             MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             con.Close();
         }
-
-        private void comeback_Click(object sender, EventArgs e)
-        {
-            Teacher form = new Teacher();
-            this.Hide();
-            form.ShowDialog();
-        }
-
         private void ModifyAttendance_Load(object sender, EventArgs e)
         {
             save.Enabled = false;

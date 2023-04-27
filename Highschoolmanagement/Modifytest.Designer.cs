@@ -37,14 +37,14 @@
             this.questioncontent = new System.Windows.Forms.TextBox();
             this.answercontent = new System.Windows.Forms.TextBox();
             this.dgv3 = new System.Windows.Forms.DataGridView();
-            this.answerrr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.answers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.dgv2 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.answerrr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.answers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
             this.SuspendLayout();
@@ -124,28 +124,18 @@
             // 
             this.dgv3.AllowUserToAddRows = false;
             this.dgv3.AllowUserToDeleteRows = false;
+            this.dgv3.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.answerrr,
             this.answers});
             this.dgv3.Location = new System.Drawing.Point(600, 41);
             this.dgv3.Name = "dgv3";
+            this.dgv3.ReadOnly = true;
+            this.dgv3.RowHeadersVisible = false;
             this.dgv3.Size = new System.Drawing.Size(191, 361);
             this.dgv3.TabIndex = 12;
             this.dgv3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv3_CellContentClick);
-            // 
-            // answerrr
-            // 
-            this.answerrr.DataPropertyName = "answerID";
-            this.answerrr.HeaderText = "Answer ID";
-            this.answerrr.Name = "answerrr";
-            // 
-            // answers
-            // 
-            this.answers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.answers.DataPropertyName = "answercontent";
-            this.answers.HeaderText = "Nội dung câu trả lời";
-            this.answers.Name = "answers";
             // 
             // button1
             // 
@@ -164,29 +154,18 @@
             this.dgv2.AllowUserToDeleteRows = false;
             this.dgv2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv2.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Column1});
             this.dgv2.Location = new System.Drawing.Point(397, 41);
             this.dgv2.Name = "dgv2";
+            this.dgv2.ReadOnly = true;
+            this.dgv2.RowHeadersVisible = false;
             this.dgv2.Size = new System.Drawing.Size(186, 361);
             this.dgv2.TabIndex = 11;
             this.dgv2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellContentClick);
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID.DataPropertyName = "questionID";
-            this.ID.HeaderText = "Question ID";
-            this.ID.Name = "ID";
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.DataPropertyName = "questioncontent";
-            this.Column1.HeaderText = "Nội dung câu hỏi";
-            this.Column1.Name = "Column1";
             // 
             // button2
             // 
@@ -209,6 +188,40 @@
             this.button3.Text = "Quay lại";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // answerrr
+            // 
+            this.answerrr.DataPropertyName = "answerID";
+            this.answerrr.HeaderText = "Answer ID";
+            this.answerrr.Name = "answerrr";
+            this.answerrr.ReadOnly = true;
+            this.answerrr.Width = 50;
+            // 
+            // answers
+            // 
+            this.answers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.answers.DataPropertyName = "answercontent";
+            this.answers.HeaderText = "Nội dung câu trả lời";
+            this.answers.Name = "answers";
+            this.answers.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ID.DataPropertyName = "questionID";
+            this.ID.FillWeight = 60.9137F;
+            this.ID.HeaderText = "Question ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "questioncontent";
+            this.Column1.FillWeight = 139.0863F;
+            this.Column1.HeaderText = "Nội dung câu hỏi";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Modifytest
             // 
@@ -253,11 +266,11 @@
         private System.Windows.Forms.DataGridView dgv3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgv2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn answerrr;
         private System.Windows.Forms.DataGridViewTextBoxColumn answers;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

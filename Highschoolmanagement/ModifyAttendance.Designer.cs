@@ -39,7 +39,7 @@
             // 
             // days
             // 
-            this.days.Location = new System.Drawing.Point(376, 78);
+            this.days.Location = new System.Drawing.Point(352, 127);
             this.days.Name = "days";
             this.days.Size = new System.Drawing.Size(100, 20);
             this.days.TabIndex = 3;
@@ -48,7 +48,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(188, 78);
+            this.label1.Location = new System.Drawing.Point(164, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 20);
             this.label1.TabIndex = 2;
@@ -56,7 +56,7 @@
             // 
             // classID
             // 
-            this.classID.Location = new System.Drawing.Point(376, 171);
+            this.classID.Location = new System.Drawing.Point(352, 220);
             this.classID.Name = "classID";
             this.classID.Size = new System.Drawing.Size(100, 20);
             this.classID.TabIndex = 5;
@@ -65,7 +65,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(294, 171);
+            this.label2.Location = new System.Drawing.Point(270, 220);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 20);
             this.label2.TabIndex = 4;
@@ -73,7 +73,7 @@
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(393, 242);
+            this.save.Location = new System.Drawing.Point(369, 309);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(83, 39);
             this.save.TabIndex = 9;
@@ -83,7 +83,7 @@
             // 
             // find
             // 
-            this.find.Location = new System.Drawing.Point(277, 242);
+            this.find.Location = new System.Drawing.Point(253, 309);
             this.find.Name = "find";
             this.find.Size = new System.Drawing.Size(83, 39);
             this.find.TabIndex = 8;
@@ -93,9 +93,10 @@
             // 
             // clb
             // 
+            this.clb.BackColor = System.Drawing.SystemColors.ControlLight;
             this.clb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clb.FormattingEnabled = true;
-            this.clb.Location = new System.Drawing.Point(492, 28);
+            this.clb.Location = new System.Drawing.Point(502, 60);
             this.clb.Name = "clb";
             this.clb.Size = new System.Drawing.Size(298, 344);
             this.clb.TabIndex = 11;

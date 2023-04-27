@@ -43,7 +43,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(181, 65);
+            this.label1.Location = new System.Drawing.Point(184, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 20);
             this.label1.TabIndex = 0;
@@ -51,9 +51,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(316, 65);
+            this.textBox1.Location = new System.Drawing.Point(319, 120);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(110, 20);
             this.textBox1.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -66,6 +66,7 @@
             // 
             // clb
             // 
+            this.clb.BackColor = System.Drawing.SystemColors.ControlLight;
             this.clb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clb.FormattingEnabled = true;
             this.clb.Location = new System.Drawing.Point(3, 3);
@@ -75,7 +76,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(217, 112);
+            this.button1.Location = new System.Drawing.Point(203, 187);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 39);
             this.button1.TabIndex = 3;
@@ -85,7 +86,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(333, 112);
+            this.button2.Location = new System.Drawing.Point(319, 187);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(83, 39);
             this.button2.TabIndex = 4;
@@ -97,22 +98,22 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(192, 231);
+            this.label2.Location = new System.Drawing.Point(185, 277);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 16);
+            this.label2.Size = new System.Drawing.Size(99, 18);
             this.label2.TabIndex = 5;
             this.label2.Text = "Thời gian: ";
             // 
             // lb3
             // 
             this.lb3.AutoSize = true;
-            this.lb3.BackColor = System.Drawing.SystemColors.Info;
-            this.lb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb3.Location = new System.Drawing.Point(276, 231);
+            this.lb3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lb3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb3.Location = new System.Drawing.Point(290, 275);
             this.lb3.Name = "lb3";
-            this.lb3.Size = new System.Drawing.Size(15, 16);
+            this.lb3.Size = new System.Drawing.Size(19, 21);
             this.lb3.TabIndex = 6;
             this.lb3.Text = "1";
             // 

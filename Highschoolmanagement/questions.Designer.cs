@@ -58,7 +58,7 @@
             this.fl1.Controls.Add(this.an4);
             this.fl1.Controls.Add(this.an5);
             this.fl1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.fl1.Location = new System.Drawing.Point(265, 94);
+            this.fl1.Location = new System.Drawing.Point(256, 86);
             this.fl1.Name = "fl1";
             this.fl1.Size = new System.Drawing.Size(280, 147);
             this.fl1.TabIndex = 5;
@@ -134,7 +134,7 @@
             this.Controls.Add(this.fl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "questions";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "questions";
             this.Load += new System.EventHandler(this.questions_Load);
             this.fl1.ResumeLayout(false);

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HighSchool;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Highschoolmanagement
 {
@@ -46,14 +47,17 @@ namespace Highschoolmanagement
             MySqlConnection conn = new MySqlConnection();
             conn.ConnectionString = constr;
             conn.Open();
-            string query = "select * from teacher where username='" + tk1.Text + "' and pwd='" + password.Text + "';";
+            string query = "select username,pwd from teacher where username='" + tk1.Text + "' and pwd='" + password.Text + "';";
             MySqlCommand cmd = new MySqlCommand(query,conn);
             MySqlDataReader dr = cmd.ExecuteReader();
                 try { 
                      if (dr.HasRows)
             {   
+                    dr.Read();
                     MessageBox.Show("Đăng Nhập Thành Công!","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    Teacher form2 = new Teacher();
+                    string username = dr.GetString(0);
+                    string password = dr.GetString(1);
+                    Teacher form2 = new Teacher(username,password);
                     form2.Show();
                     this.Hide();
                     conn.Close();

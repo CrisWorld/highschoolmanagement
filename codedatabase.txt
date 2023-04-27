@@ -1,0 +1,204 @@
+create database QLDL;
+create table timetable2(
+timetableID varchar(10) primary key,
+teachingscheduleID varchar(10) not null,
+classID varchar(10) not null,
+slot int not null
+);
+create table subjectschedule(
+subjectscheduleID varchar(10) primary key,
+subjectshedukename varchar(255) not null,
+dateinfo datetime not null
+);
+create table subject(
+subjectID varchar(10) primary key,
+subjectname varchar(30) not null
+);
+create table timetable(
+timetableID varchar(10) primary key,
+subjectscheduleID varchar(10) not null,
+subjectID varchar(10) not null,
+slot int not null
+);
+create table test(
+testcode varchar(10) primary key,
+testname varchar(30) not null,
+password varchar(40),
+duration time not null,
+classID varchar(10) not null,
+amountofquestions int not null
+);
+create table question(
+questionID int primary key auto_increment,
+testcode varchar(10) not null,
+questioncontent varchar(255) not null,
+quanity int not null,
+foreign key (testcode) references test(testcode)
+);
+create table answer(
+answerID int primary key auto_increment,
+questionID int not null,
+correct int,
+answercontent varchar(255) not null,
+foreign key (questionID) references question(questionID)
+);
+
+create table teachingschedule(
+teachingscheduleID varchar(10) primary key,
+teachingschedulename varchar(255) not null,
+dateinfo datetime not null
+);
+create table marklist(
+marklistID varchar(10) primary key
+);
+create table mark(
+markID varchar(10) primary key,
+testcode varchar(10) not null,
+mark float not null,
+marklistID varchar(10) not null,
+foreign key (marklistID) references marklist(marklistID),
+foreign key (testcode) references test(testcode)
+);
+create table admin(
+fullname varchar(255) not null,
+adminID varchar(10) unique not null primary key,
+username varchar(30) unique not null,
+pwd varchar(255) not null,
+address varchar(255),
+phonenumber varchar(15),
+email varchar(255)
+);
+create table student(
+fullname varchar(255) not null,
+studentID varchar(10) unique not null primary key,
+username varchar(30) unique not null,
+pwd varchar(255) not null,
+address varchar(255) not null,
+phonenumber varchar(15) not null unique,
+birthday datetime,
+email varchar(255) not null unique,
+marklistID varchar(50) not null unique,
+classID varchar(10),
+foreign key (classID) references class(classID),
+foreign key (marklistID) references marklist(marklistID)
+);
+create table teacher(
+fullname varchar(255) not null,
+teacherID varchar(10) unique not null primary key,
+username varchar(30) unique not null,
+pwd varchar(255) not null,
+address varchar(255) not null,
+phonenumber varchar(15),
+birthday datetime not null,
+email varchar(255),
+subjectID varchar(10),
+teachingscheduleID varchar(10) not null,
+CHECK (birthday<current_date()),
+foreign key (subjectID) references subject(subjectID),
+foreign key (teachingscheduleID) references teachingschedule(teachingscheduleID)
+);
+create table class(
+classID varchar(10) primary key not null unique,
+classname varchar(30) unique not null,
+mainteacherID varchar(10) not null unique,
+subjectscheduleID varchar(10) not null unique,
+foreign key (mainteacherID) references teacher(teacherID),
+foreign key (subjectscheduleID) references subjectschedule(subjectscheduleID)
+);
+create table attendancelist(
+attendancelistID int primary key auto_increment,
+days date not null,
+classID varchar(10) not null,
+foreign key (classID) references class(classID)
+);
+create table attendance(
+attendanceID int primary key auto_increment,
+attendancelistID int not null,
+studentID varchar(10) not null,
+checked varchar(1) not null,
+foreign key (attendancelistID) references attendancelist(attendancelistID),
+foreign key (studentID) references student(studentID)
+);	
+ALTER TABLE test
+ADD foreign key (classID) references class(classID);
+ALTER TABLE timetable2
+ADD foreign key (classID) references class(classID);
+ALTER TABLE timetable2
+ADD foreign key (teachingscheduleID) references teachingschedule(teachingscheduleID);
+ALTER TABLE timetable
+ADD foreign key (subjectscheduleID) references subjectschedule(subjectscheduleID);
+ALTER TABLE timetable
+ADD foreign key (subjectID) references subject(subjectID);
+insert into subject(subjectID,subjectname)
+values ('1','Math');
+insert into teachingschedule(teachingscheduleID,teachingschedulename,dateinfo)
+values ('1','Lich day tuan dau` tien','2023-4-19');
+insert into subjectschedule(subjectscheduleID,subjectshedukename,dateinfo)
+values ('1','Lich hoc hehe','2023-4-19');
+insert into teacher(fullname,teacherID,username,pwd,address,phonenumber,birthday,email,subjectID,teachingscheduleID)
+values ('Vo Cong Dinh','1','congdinhvtc','0122642359','Dien Duong, Dien Ban, Quang Nam','0775771042','1989-7-29','quoch147@gmail.com','1','1');
+insert into class(classID,classname,mainteacherID,subjectscheduleID)
+values ('1','K12C7','1','1');
+insert into test(testcode,testname,password,duration,classID,amountofquestions)
+values ('01','testing','123','01:00:00','1','4');
+insert into question(testcode,questioncontent,quanity,answerID)
+values ('01','Con chó đẻ ra con gì ?','4','1');
+insert into question(testcode,questioncontent,quanity,answerID)
+values ('01','Con gà đẻ gì ?','4','5'),
+		('01','Con gì dưới đây ăn cà rốt ?','4','9'),
+        ('01','Kem đánh răng dùng để làm gì?','4','13');
+insert into answer(questionID,answercontent)
+values ('01','Chó mẹ'),
+	('01','Chó con'),
+    ('01','Mèo mẹ'),
+    ('01','Jinn cute');
+insert into answer(questionID,answercontent)
+values ('02','Con'),
+		('02','Trứng'),
+    ('02','Không đẻ gì'),
+    ('02','Đẻ ra Jinn cute');
+insert into answer(questionID,answercontent)
+values ('03','Rắn'),
+		('03','Thỏ'),
+    ('03','Khủng long'),
+    ('03','Con Jinn cutee');
+insert into answer(questionID,answercontent)
+values ('04','Vệ sinh bàn ghế'),
+		('04','Vệ sinh răng'),
+    ('04','Để ăn'),
+    ('04','Để đánh răng cho Jinn cute');
+    
+select studentID,fullname from student as st,class as cl where st.classID=cl.classID;
+insert into marklist(marklistID)
+values ('001');
+insert into marklist(marklistID)
+values ('002');
+insert into student(fullname,studentID,username,pwd,address,phonenumber,birthday,email,marklistID,classID)
+values ('Nguyễn Minh Hoàng Quốc','DE001','quocde001','0122642359','Điện Dương, Điện Bàn, Quảng Nam','0775771042','2004-01-01','quoch147@gmail.com','001','1');
+insert into student(fullname,studentID,username,pwd,address,phonenumber,birthday,email,marklistID,classID)
+values ('Nguyễn Minh Hoàng Long','DE002','longde002','0122642359','Điện Dương, Điện Bàn, Quảng Nam','0914064642','2004-10-29','smartmonkey@gmail.com','002','1');
+select * from class;
+select * from student;
+update teacher set teachingscheduleID = 'DAY001' where username = 'congdinhvtc';
+insert into teachingschedule
+values ('DAY001','Lịch dạy ngày 25/4/2023','2023-4-25');
+insert into timetable2
+values ('1','DAY001','1','1');
+insert into timetable2
+values ('2','DAY001','1','4'),
+		('3','DAY001','1','3');
+update timetable2
+set slot = 4 where timetableID = '2';
+SELECT timetableID,teachingscheduleID,classID,slot
+FROM timetable2
+ORDER BY slot ASC;
+select slot,classname from timetable2 as t1, teachingschedule as t2, class as c where t1.teachingscheduleID=t2.teachingscheduleID and dateinfo='2023-4-25' and t1.classID=c.classID
+order by slot asc;	
+insert into marklist(marklistID)
+values ('003'),
+		('004'),
+        ('005');
+insert into student(fullname,studentID,username,pwd,address,phonenumber,birthday,email,marklistID,classID)
+values ('Nguyễn Thị Vân Nga','DE003','vannga2005','0122642359','Điện Dương, Điện Bàn, Quảng Nam','0969309114','2005-10-29','abcdd@gmail.com','003','1'),
+('Vương Hưng Thành','DE004','hungthanh2004','0122642359','Điện Dương, Điện Bàn, Quảng Nam','0969309114','2005-10-29','abcdd@gmail.com','004','1'),
+('Trần Thanh Dũng','DE005','thanhdung2004','0122642359','Điện Dương, Điện Bàn, Quảng Nam','0969309114','2005-10-29','abcdd@gmail.com','005','1');
